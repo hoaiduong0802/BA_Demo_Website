@@ -1,8 +1,57 @@
-// CSS HOMEPAGE
-// Ví dụ
+.header {
+    height: 100px;
+    align-content: center;
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    background-color: whitesmoke;
+    .container {
+        @include mid(true);
+        justify-content: space-between;
+    }
+
+    &__logo {
+        aspect-ratio: 16/9;
+        align-content: center;
+        span {
+            display: block;
+            width: 100px;
+            background-color: gray;
+            text-align: center;
+        }
+    }
+
+    &__nav {
+        nav {
+            cursor: pointer;
+
+            ul {
+                @include mid(true);
+                justify-content: space-between;
+                column-gap: 20px;
+
+                li {
+                    @include mid(true);
+                    column-gap: 10px;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        @include mid(true);
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+}
+
 .schero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &__banner {
+        background-color: gray;
+        @include size(100vw, 100vh);
+        align-content: center;
+        h2{
+            text-align: center;
+        }
+    }
 }
