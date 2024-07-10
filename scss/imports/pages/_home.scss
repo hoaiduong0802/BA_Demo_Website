@@ -1,57 +1,233 @@
 .header {
-    height: 100px;
+  height: 100px;
+  align-content: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  background-color: whitesmoke;
+  .container {
+    @include mid(true);
+    justify-content: space-between;
+  }
+
+  &__logo {
+    aspect-ratio: 16/9;
     align-content: center;
-    position: fixed;
-    z-index: 1000;
-    width: 100vw;
-    background-color: whitesmoke;
-    .container {
-        @include mid(true);
-        justify-content: space-between;
+    span {
+      display: block;
+      width: 100px;
+      background-color: gray;
+      text-align: center;
     }
+  }
 
-    &__logo {
-        aspect-ratio: 16/9;
-        align-content: center;
-        span {
-            display: block;
-            width: 100px;
-            background-color: gray;
-            text-align: center;
-        }
-    }
+  &__nav {
+    nav {
+      cursor: pointer;
 
-    &__nav {
-        nav {
-            cursor: pointer;
-
-            ul {
-                @include mid(true);
-                justify-content: space-between;
-                column-gap: 20px;
-
-                li {
-                    @include mid(true);
-                    column-gap: 10px;
-                }
-            }
-        }
-    }
-
-    &__cta {
+      ul {
         @include mid(true);
         justify-content: space-between;
         column-gap: 20px;
+
+        li {
+          @include mid(true);
+          column-gap: 10px;
+        }
+      }
     }
+  }
+
+  &__cta {
+    @include mid(true);
+    justify-content: space-between;
+    column-gap: 20px;
+  }
 }
 
 .schero {
-    &__banner {
-        background-color: gray;
-        @include size(100vw, 100vh);
-        align-content: center;
-        h2{
-            text-align: center;
-        }
+  &__banner {
+    background-color: gray;
+    @include size(100vw, 100vh);
+    align-content: center;
+    h2 {
+      text-align: center;
     }
+  }
+}
+
+.section {
+  padding-top: 100px;
+  h3 {
+    @include text(var(--h3-fs), "im", null, $black-cl, uppercase);
+    text-align: center;
+  }
+
+  .row {
+    padding-top: 60px;
+    @include xs {
+      padding-top: 30px;
+    }
+  }
+
+  &_introduce {
+    text-align: center;
+    h3 {
+      padding-top: 20px;
+      @include text(var(--h3-fs), "im", null, $black-cl, null);
+    }
+    p {
+      @include text(var(--body14-fs), "im", null, $black-cl, null);
+      padding-top: 20px;
+      @include xs {
+        padding-top: 10px;
+      }
+    }
+    .text {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 4px;
+        background-color: green;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .start {
+      padding-top: 20px;
+      @include xs {
+        padding-top: 10px;
+      }
+    }
+  }
+  &_mainstreamProduct {
+    .wrapItem {
+      @include xs {
+        margin-bottom: 15px;
+      }
+    }
+    .item {
+      position: relative;
+      img {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+      .text {
+        text-align: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-top: 30px;
+        @include xs {
+          padding-top: 15px;
+        }
+        p {
+          padding: 10px;
+          @include xs {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+  &_product {
+    &-logo {
+    }
+    &-title {
+      @include text(var(--h3-fs), "im", null, $black-cl, uppercase);
+      text-align: center;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 4px;
+        background-color: green;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .item {
+      text-align: center;
+      margin-top: 30px;
+      @include xs {
+        margin-top: 15px;
+      }
+      .title {
+        @include text(var(--body14-fs), "ir", null, $black-cl, null);
+      }
+      .price {
+        @include text(var(--body14-fs), "ir", null, green, null);
+      }
+      .button {
+        border-radius: 50px;
+        border: 2px solid green;
+        cursor: pointer;
+        width: 70%;
+        margin: 10px auto;
+        a {
+          text-align: center;
+          padding: 5px;
+          @include text(var(--body14-fs), "ir", null, green, uppercase);
+          line-height: 20px;
+        }
+      }
+    }
+    .btnMore {
+      text-align: center;
+      padding-top: 30px;
+      a {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 30px;
+        background: #000;
+        span {
+          @include text(var(--body16-fs), "ir", null, #fff, uppercase);
+        }
+      }
+    }
+  }
+  &_chinhsach {
+    border-top: solid 1px #ebebeb;
+    border-bottom: solid 1px #ebebeb;
+    padding-top: 0;
+    .wrap_chinhsach {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .itemcs {
+        display: block;
+        text-align: center;
+        width: calc(100% / 4);
+        float: left;
+        padding: 30px 15px;
+        border-right: solid 1px #ebebeb;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+.combotHot,
+.beautiful {
+  &_wrap {
+    .row {
+      padding-right: 30px;
+    }
+  }
+}
+.beautiful {
+  background: #dfeb83;
+  padding: 50px 0;
+  margin-top: 100px;
 }

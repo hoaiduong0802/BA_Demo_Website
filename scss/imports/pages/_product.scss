@@ -1,0 +1,233 @@
+.mainwrapper {
+  padding-top: 100px;
+
+  .AllProduct {
+    padding-top: 80px;
+    h3 {
+      @include text(var(--body16-fs), "ir", null, #000, null);
+      font-weight: bold;
+    }
+    &_category {
+      padding: 20px 0;
+      ul {
+        li {
+          cursor: pointer;
+          padding-bottom: 5px;
+          position: relative;
+          i {
+            position: absolute;
+            right: 20px;
+            font-size: 12px;
+            top: 10px;
+            // transform: translateY(-50%);
+          }
+          a {
+            @include text(var(--body14-fs), "ir", null, #000, null);
+          }
+        }
+      }
+      .icon-down {
+        display: block;
+      }
+      .icon-up {
+        display: none;
+      }
+      .dropdown {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    }
+
+    .collection {
+      .sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include sm {
+          display: block;
+        }
+        ul {
+          display: flex;
+          gap: 10px;
+          @include sm {
+            flex-direction: column;
+          }
+        }
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 30px 0;
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          li {
+            padding: 2px 10px;
+            border-radius: 50%;
+            border: 1px solid;
+            cursor: pointer;
+            margin: 0 5px;
+          }
+        }
+        .btn {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .sliderBar {
+      @include md {
+        position: fixed;
+        width: 256px;
+        background: #fff;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-top: solid 1px #bbbbbb;
+        border-left: solid 1px #bbbbbb;
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 9999;
+        visibility: hidden;
+        transition: all 0.35s ease;
+        transform: translateX(100%);
+      }
+    }
+
+    .item {
+      text-align: center;
+      margin-top: 30px;
+      @include xs {
+        margin-top: 15px;
+      }
+      .title {
+        @include text(var(--body14-fs), "ib", null, $black-cl, null);
+      }
+      .price {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        .new-price {
+          @include text(var(--body16-fs), "ib", null, green, null);
+        }
+        .old-price {
+          text-decoration: line-through;
+          padding-left: 10px;
+          @include text(var(--body14-fs), "ir", null, #8d90a6, null);
+        }
+      }
+      .button {
+        border-radius: 50px;
+        border: 2px solid green;
+        cursor: pointer;
+        width: 70%;
+        margin: 10px auto;
+        &:hover {
+          background: green;
+          a {
+            color: #fff;
+          }
+        }
+        a {
+          text-align: center;
+          padding: 5px;
+          @include text(var(--body14-fs), "ir", null, green, uppercase);
+          line-height: 20px;
+        }
+      }
+    }
+    .btnMore {
+      text-align: center;
+      padding-top: 30px;
+      a {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 30px;
+        background: #000;
+        span {
+          @include text(var(--body16-fs), "ir", null, #fff, uppercase);
+        }
+      }
+    }
+
+    .menuSideBar {
+      display: none;
+      @include md {
+        display: block;
+        position: fixed;
+        right: 0;
+        cursor: pointer;
+        top: 50%;
+        transition: all 0.35s ease;
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+    .open {
+      right: 260px !important;
+      transition: all 0.35s ease;
+    }
+    .openSidebar {
+      padding-top: 15px;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  .breadcrumb {
+    background: #f7f7f7;
+    padding: 10px 0;
+    border-top: solid 1px #ebebeb;
+    border-bottom: solid 1px #ebebeb;
+    ul {
+      display: flex;
+      li {
+        a {
+          @include text(var(--body14-fs), "ir", null, #000, null);
+        }
+      }
+    }
+  }
+
+  .listProduct {
+    padding: 10px 0;
+
+    &_wrap {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #ebebeb;
+      display: flex;
+      .thumbnail {
+        img {
+          max-width: 100%;
+        }
+      }
+      .bottom {
+        padding-left: 10px;
+        a {
+          @include text(var(--body14-fs), "ir", null, #000, null);
+        }
+        .price {
+          display: flex;
+          .special-price {
+            @include text(var(--body14-fs), "ir", null, #337438, null);
+            font-weight: 700;
+          }
+          .old-price {
+            @include text(var(--body12-fs), "ir", null, #8d90a6, null);
+            text-decoration: line-through;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

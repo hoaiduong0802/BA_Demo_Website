@@ -1,1 +1,105 @@
 // css footer
+.contact {
+  form {
+    @include xs {
+      text-align: center;
+    }
+  }
+  &_form {
+    padding: 60px 0;
+    background-color: #7f8a90;
+    h2 {
+      @include text(var(--h4-fs), "im", null, $white-cl, null);
+    }
+    p {
+      @include text(var(--body14-fs), "im", null, $white-cl, null);
+    }
+    .mail {
+      margin-top: 30px;
+      input {
+        width: calc(100% - 210px);
+        @include text(var(--body14-fs), "ir", null, $black-cl, null);
+        border-radius: 0px;
+        margin-bottom: 0;
+        display: inline-block;
+        background: #fff;
+        padding: 0 20px;
+        min-height: unset;
+        height: 50px;
+        color: #000000;
+        font-size: 14px;
+        border: solid 2px #ebebeb;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        outline: none;
+        margin-right: -5px;
+        @include xs {
+          height: 35px;
+        }
+      }
+      .subscribe {
+        @include text(var(--body16-fs), "ir", null, $white-cl, uppercase);
+        width: 170px;
+        margin-top: 0px;
+        line-height: 45px;
+        height: 50px;
+        border-radius: 0px;
+        display: inline-block;
+        background: #3a8f5a;
+        border: 1px solid #3a8f5a;
+        border-left: 0;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        @include xs {
+          width: 110px;
+          padding: 0 5px;
+          text-align: center;
+          font-size: 14px;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}
+footer {
+  border-top: solid 1px #ebebeb;
+  .contact {
+    padding: 30px 0;
+  }
+  .title {
+    @include text(var(--body14-fs), "im", null, $black-cl, null);
+    position: relative;
+    &::before {
+      position: absolute;
+      content: " ";
+      bottom: -10px;
+      left: 0;
+      width: 30%;
+      height: 2px;
+      background: green;
+    }
+  }
+  .content {
+    margin-top: 30px;
+    .item {
+      span {
+        @include text(var(--body12-fs), "ir", null, $black-cl, null);
+      }
+    }
+    ul {
+      li {
+        a {
+          @include text(var(--body12-fs), "ir", null, $black-cl, null);
+        }
+      }
+    }
+  }
+
+  .coppyRight {
+    border-top: solid 1px #ebebeb;
+    padding: 20px 20px;
+    text-align: center;
+    @include text(var(--body14-fs), "im", null, $black-cl, null);
+  }
+}
