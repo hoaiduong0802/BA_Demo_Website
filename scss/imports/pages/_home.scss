@@ -48,24 +48,32 @@
 }
 
 @include sm {
-  .header{
-    &__nav{
-      nav{
-        ul{
+  .header {
+    &__nav {
+      nav {
+        ul {
           font-size: 13px;
         }
       }
     }
   }
 }
-@include xs{
-  .header{
-    &__nav{
+@include xs {
+  .header {
+    &__nav {
       display: none;
     }
   }
 }
 .schero {
+  &__slider {
+    @include md {
+      height: 700px;
+    }
+    @include sm {
+      height: 400px;
+    }
+  }
   &__banner {
     background-color: gray;
     @include size(100vw, 100vh);
@@ -174,7 +182,8 @@
   }
 
   &_product {
-    &-logo {}
+    &-logo {
+    }
 
     &-title {
       @include text(var(--h3-fs), "im", null, $black-cl, uppercase);
@@ -216,11 +225,21 @@
         width: 70%;
         margin: 10px auto;
 
+        @include sm {
+          width: 90%;
+        }
+        @include xs {
+          width: 50%;
+        }
+
         a {
           text-align: center;
           padding: 5px;
           @include text(var(--body14-fs), "ir", null, green, uppercase);
           line-height: 20px;
+          @include md {
+            font-size: 12px;
+          }
         }
       }
     }

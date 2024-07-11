@@ -2315,6 +2315,26 @@ footer .coppyRight {
        column-gap: 20px;
 }
 
+@media screen and (max-width: 991px) {
+  .header__nav nav ul {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .schero__slider {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .schero__slider {
+    height: 400px;
+  }
+}
 .schero__banner {
   background-color: gray;
   width: 100vw;
@@ -2463,6 +2483,16 @@ footer .coppyRight {
   width: 70%;
   margin: 10px auto;
 }
+@media screen and (max-width: 991px) {
+  .section_product .item .button {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section_product .item .button {
+    width: 50%;
+  }
+}
 .section_product .item .button a {
   text-align: center;
   padding: 5px;
@@ -2471,6 +2501,11 @@ footer .coppyRight {
   color: green;
   text-transform: uppercase;
   line-height: 20px;
+}
+@media screen and (max-width: 1199px) {
+  .section_product .item .button a {
+    font-size: 12px;
+  }
 }
 .section_product .btnMore {
   text-align: center;
@@ -2771,6 +2806,11 @@ footer .coppyRight {
   padding-left: 10px;
 }
 
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .carousel-cell {
   width: 100%; /* full width */
   height: 300px;
@@ -2826,6 +2866,8 @@ footer .coppyRight {
 }
 .DetailProduct .detailContent__button .quantity input {
   outline: none;
+  border: none;
+  text-align: center;
   width: 30%;
 }
 .DetailProduct .detailContent__button .addCart {
