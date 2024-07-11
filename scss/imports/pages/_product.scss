@@ -1,5 +1,5 @@
 .mainwrapper {
-  padding-top: 100px;
+  padding-top: 50px;
 
   .AllProduct {
     padding-top: 80px;
@@ -230,4 +230,130 @@
       }
     }
   }
+}
+
+// detail product
+
+.carousel-cell {
+  width: 100%; /* full width */
+  height: 300px;
+  background: #222;
+  /* center images in cells with flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel.is-fullscreen .carousel-cell {
+  height: 100%;
+}
+
+.carousel-cell img {
+  display: block;
+  max-height: 100%;
+}
+
+.detailProduct_slider {
+  .flickity-page-dots {
+  }
+}
+
+.DetailProduct {
+  padding-top: 80px;
+  .detailContent {
+    &__title {
+      h2 {
+        @include text(var(--h4-fs), "ir", null, #000, null);
+        padding: 10px 0;
+      }
+      span {
+        @include text(var(--body14-fs), "ir", null, #000, null);
+      }
+      .price {
+        @include text(var(--body18-fs), "im", null, #337438, null);
+        padding: 20px 0;
+      }
+    }
+    &__button {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .quantity {
+        width: calc(100% - 70%);
+        button {
+          border: none;
+          background: transparent;
+          cursor: pointer;
+          font-size: 20px;
+        }
+        input {
+          outline: none;
+          width: calc(100% - 70%);
+        }
+      }
+      .addCart {
+        border-radius: 50px;
+        border: 2px solid green;
+        cursor: pointer;
+        width: calc(100% - 50%);
+        text-align: center;
+        padding: 10px;
+        &:hover {
+          background: green;
+          a {
+            color: #fff;
+          }
+        }
+        a {
+          text-align: center;
+          padding: 5px;
+          @include text(var(--body14-fs), "im", null, green, uppercase);
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  .description {
+    padding: 50px 0;
+    border-bottom: solid 1px #bbbbbb;
+    &__tabs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      border-top: solid 1px #bbbbbb;
+      border-bottom: solid 1px #bbbbbb;
+      padding: 15px 0;
+      li {
+        list-style: none;
+        cursor: pointer;
+        @include text(var(--h4-fs), "im", null, #000, null);
+      }
+      .active {
+        color: red;
+      }
+    }
+    &__item {
+      display: none;
+      .text {
+        p {
+          @include text(var(--body12-fs), "ir", null, #000, null);
+        }
+      }
+    }
+    .active {
+      display: block;
+    }
+  }
+  .right {
+    .title {
+      h3 {
+        @include text(var(--h4-fs), "im", null, #000, null);
+      }
+    }
+  }
+}
+
+.section_productDetail {
+  padding: 50px 0;
 }
