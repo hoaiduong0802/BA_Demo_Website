@@ -47,7 +47,24 @@
   }
 }
 
-
+@include sm {
+  .header{
+    &__nav{
+      nav{
+        ul{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+@include xs{
+  .header{
+    &__nav{
+      display: none;
+    }
+  }
+}
 .schero {
   &__banner {
     background-color: gray;
